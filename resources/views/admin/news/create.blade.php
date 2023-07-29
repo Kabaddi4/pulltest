@@ -38,7 +38,7 @@
                         </div>
                     </div>
                     @csrf
-                    <input type="submit" class="btn btn-primary" value="更新">
+                    <input type="submit" class="btn btn-primary" value="投稿">
                 </form>
             </div>
         </div>
