@@ -24,6 +24,7 @@ Route::controller(NewsController::class)->prefix('admin')->name('admin.')->middl
     Route::get('news', 'index')->name('news.index');
     Route::get('news/edit', 'edit')->name('news.edit');
     Route::post('news/edit', 'update')->name('news.update');
+    Route::get('news/delete', 'delete')->name('news.delete');
 });
 
 use App\Http\Controllers\Admin\ProfileController;

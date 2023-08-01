@@ -70,4 +70,12 @@ class NewsController extends Controller
         
         return redirect('admin/news');
     }
+    
+    public function delete(Request $request){
+        $news = News::find($request->id);
+        
+        $news->delete();
+        
+        return redirect('admin/news/');
+    }
 }
