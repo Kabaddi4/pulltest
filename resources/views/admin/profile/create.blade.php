@@ -19,25 +19,33 @@
                     <div class="form-group row">
 	                    <label class="col-md-2">氏名</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" name="name">
+                            <input type="text" class="form-control" name="name" 
+                            value="{{ old('name') }}">
                         </div>
                     </div>
                     <div class="form-group row">
 	                    <label class="col-md-2">性別</label>
-                        <div class="col-md-10">
-                            <input type="checkbox" class="form-control" name="gender">
+                        <div class="col-md-5">
+                            <input type="checkbox" class="form-control" name="gender" 
+                            value="male">男性
+                        </div>
+                        <div class="col-md-5">
+                            <input type="checkbox" class="form-control" name="gender" 
+                            value="female">女性
                         </div>
                     </div>
                     <div class="form-group row">
 	                    <label class="col-md-2">趣味</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" name="hobby">
+                            <input type="text" class="form-control" name="hobby" 
+                            value="{{ old('hobby') }}">
                         </div>
                     </div>
                     <div class="form-group row">
 	                    <label class="col-md-2">自己紹介</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="introduction"></textarea> 
+                            <textarea class="form-control" name="introduction" rows="20">
+                            {{ old('introduction') }}</textarea> 
                         </div>
                     </div>
                     @csrf
