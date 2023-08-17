@@ -25,11 +25,11 @@
                     </div>
                     <div class="form-group row">
 	                    <label class="col-md-2">性別</label>
-                        <div class="col-md-5">
+                        <div class="col-md-1">
                             <input type="checkbox" class="form-control" name="gender" 
                             value="male">男性
                         </div>
-                        <div class="col-md-5">
+                        <div class="col-md-1">
                             <input type="checkbox" class="form-control" name="gender" 
                             value="female">女性
                         </div>
