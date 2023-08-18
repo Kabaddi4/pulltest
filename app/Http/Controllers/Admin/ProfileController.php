@@ -27,25 +27,23 @@ class ProfileController extends Controller
         $profile->fill($form);
         $profile->save();
         
-        dd($form);
-        
         return redirect('admin/profile/create');
     }
     
      public function edit(Request $request){
         //IDから取得
-        $profiles = Profile::find($request->id);
+        $profile = Profile::find($request->id);
         //nullならエラーを出力
-        if (empty($news)) {
+        if (empty($profile)) {
             abort(404);
         }
-        return view('admin.profile.edit', ['profile_form' => $profiles]);
+        return view('admin.profile.edit', ['form' => $profile]);
     }
     
      public function update(Request $request)
     {
         //validation
-        $this->validates($request, Profile::$rules);
+        $this->validate($request, Profile::$rules);
         //対応するIDを取得
         $profiles = Profile::find($request->id);
         //formに入力された全てを取得
@@ -58,6 +56,6 @@ class ProfileController extends Controller
         $profiles->fill($form);
         $profiles->save();
         
-        return redirect('admin/profile/edit');
+        return redirect('admin/profile/edit?id=' . $profiles->id);
     }
 }

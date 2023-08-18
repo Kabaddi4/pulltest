@@ -39,8 +39,6 @@ class NewsController extends Controller
         $news->fill($form);
         $news->save();
         
-        dd($form);
-        
         return redirect('admin/news/create');
     }
     
