@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 use App\Models\Profile;
 
+use App\Models\Profilehistory;
+
+use Carbon\Carbon;
+
 class ProfileController extends Controller
 {
     //
@@ -53,8 +57,13 @@ class ProfileController extends Controller
         unset($form['_token']);
         
         //保存
-        $profiles->fill($form);
-        $profiles->save();
+        $profiles->fill($form)->save();
+        
+        //編集履歴
+        $profilehistory = new Profilehistory();
+        $profilehistory->profile_id = $profiles->id;
+        $profilehistory->edited_at = Carbon::now();
+        $profilehistory->save();
         
         return redirect('admin/profile/edit?id=' . $profiles->id);
     }

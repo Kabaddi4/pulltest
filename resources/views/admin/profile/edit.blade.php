@@ -25,10 +25,14 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-2" for="body">性別</label>
-                        <div class="col-md-10">
+	                    <label class="col-md-2">性別</label>
+                        <div class="col-md-1">
                             <input type="checkbox" class="form-control" name="gender" 
-                            value="{{ $form->gender }}">
+                            value="{{ $form->gender }}">男性
+                        </div>
+                        <div class="col-md-1">
+                            <input type="checkbox" class="form-control" name="gender" 
+                            value="{{ $form->gender }}">女性
                         </div>
                     </div>
                     <div class="form-group row">
@@ -55,6 +59,19 @@
                         </div>
                     </div>
                 </form>
+                
+                <div class="row mt-5">
+                    <div class="col-md-4 mx-auto">
+                        <h2>編集履歴</h2>
+                        <ul class="list-group">
+                        @if ($form->histories != NULL)
+                            @foreach ($form->histories as $profilehistory)
+                                <li class="list-group-item">{{ $profilehistory->edited_at }}</li>
+                            @endforeach
+                        @endif
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
